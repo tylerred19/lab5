@@ -10,17 +10,17 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
-	$("a.thumbnail").click(projectClick);
+	$("a.lab5-text").click(changeName);
 }
 
 // testing the flow
-function projectClick(e) { 
-    // prevent the page from reloading      
-    e.preventDefault();
-    // In an event handler, $(this) refers to      
-    // the object that triggered the event      
-    $(this).css("background-color", "#7fff00");
-}
+// function projectClick(e) { 
+//     // prevent the page from reloading      
+//     e.preventDefault();
+//     // In an event handler, $(this) refers to      
+//     // the object that triggered the event      
+//     $(this).css("background-color", "#7fff00");
+// }
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
@@ -52,4 +52,10 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+}
+
+function changeName(e) {
+	e.preventDefault();
+	console.log($(this).text());
+	$(this).text(anagrammedName($(this).text()));
 }
