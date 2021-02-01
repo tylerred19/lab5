@@ -10,11 +10,20 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$("a.thumbnail").click(projectClick);
+}
+
+// testing the flow
+function projectClick(e) { 
+    // prevent the page from reloading      
+    e.preventDefault();
+    // In an event handler, $(this) refers to      
+    // the object that triggered the event      
+    $(this).css("background-color", "#7fff00");
 }
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
